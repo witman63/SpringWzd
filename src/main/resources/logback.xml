@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="org.apache.cxf" level="INFO"/>
+ 
+  <appender name="file" class="ch.qos.logback.core.FileAppender">
+  <!--  
+        <file>/var/log/rinis/wzd/WZDservice.log</file>
+  -->
+      <file>/Users/martindewit/WZDservice.log</file>
+      <append>true</append>
+      <encoder>
+      <!--  
+         <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+         -->
+         <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</pattern>
+      </encoder>
+   </appender>
+ 
+  <root level="INFO">
+      <appender-ref ref="file" />
+  </root>
+</configuration>
